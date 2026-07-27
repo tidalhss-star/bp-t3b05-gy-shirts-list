@@ -1,315 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>가양 셔츠룸 모음 정보 - 형님들의 리얼 리스트</title>
-    <meta name="description" content="가양 셔츠룸 정보, 예약 전 확인사항. 진짜 형님들은 여기서만 논다. 전화 010-6279-0862 정보부터 예약까지 끝판왕.">
-    <meta name="keywords" content="가양 셔츠룸 정보, 가양셔츠룸 예약, 가양 셔츠룸 위치, 가양 셔츠룸 전화번호, 가양 셔츠룸 후기, 셔츠룸 가양 정보">
-    <meta name="author" content="가양 셔츠룸 모음">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://gayang-shirt-guide.node-link.shop/about.html">
-    <!-- PBN 브루탈리즘 디자인 시스템 -->
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-acid-yellow">
-    <style>
-        /* 기본 리셋 */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            background-color: #f7f1e3;
-            color: #1f1b1b;
-            font-family: 'Arial Black', 'Impact', 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
-            padding: 0;
-            margin: 0;
-            width: 100%;
-            overflow-x: hidden;
-        }
-        /* 전체 너비 채움 */
-        .full-bleed {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            padding-left: calc(50vw - 50%);
-            padding-right: calc(50vw - 50%);
-        }
-        /* 드센 브루탈리스트 스타일 */
-        h1, h2, h3, h4 {
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.03em;
-            margin-bottom: 0.5em;
-        }
-        h1 {
-            font-size: clamp(2.5rem, 10vw, 5rem);
-            border-bottom: 6px solid #1f1b1b;
-            padding-bottom: 0.1em;
-        }
-        h2 {
-            font-size: clamp(2rem, 7vw, 3.5rem);
-            background: #ffe500;
-            display: inline-block;
-            padding: 0 0.3em;
-        }
-        h3 {
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
-            border-left: 10px solid #1f1b1b;
-            padding-left: 0.3em;
-        }
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 1.2rem;
-        }
-        a {
-            color: #1f1b1b;
-            text-decoration: underline wavy #ffe500 3px;
-            font-weight: bold;
-        }
-        a:hover {
-            background: #1f1b1b;
-            color: #ffe500;
-            text-decoration: none;
-        }
-        /* 버튼 스타일 (전화 링크에 사용) */
-        .tel-btn {
-            display: inline-block;
-            background: #1f1b1b;
-            color: #ffe500;
-            padding: 0.8rem 2.5rem;
-            font-size: 1.8rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            border: 4px solid #1f1b1b;
-            text-decoration: none;
-            transition: all 0.1s ease;
-            box-shadow: 6px 6px 0 #1f1b1b;
-            margin: 1rem 0;
-        }
-        .tel-btn:hover {
-            background: #ffe500;
-            color: #1f1b1b;
-            border-color: #ffe500;
-            box-shadow: 10px 10px 0 #1f1b1b;
-            transform: translate(-2px, -2px);
-        }
-        /* 섹션 공통 */
-        section {
-            padding: 3rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        /* 네비게이션 */
-        nav {
-            background: #1f1b1b;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: #ffe500;
-            text-decoration: none;
-            font-size: 1.4rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            padding: 0.5rem 1rem;
-            border: 2px solid transparent;
-        }
-        nav a:hover {
-            background: #ffe500;
-            color: #1f1b1b;
-            border-color: #1f1b1b;
-        }
-        .hamburger-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-            padding: 5px;
-        }
-        .hamburger-menu span {
-            width: 35px;
-            height: 5px;
-            background: #ffe500;
-            border-radius: 0;
-        }
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-        /* 카드 스타일 (정보 용) */
-        .info-card {
-            background: #fff;
-            border: 4px solid #1f1b1b;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 8px 8px 0 #1f1b1b;
-        }
-        .info-card h3 {
-            margin-top: 0;
-        }
-        .info-card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .info-card li {
-            font-size: 1.2rem;
-            padding: 0.5rem 0;
-            border-bottom: 2px dashed #1f1b1b;
-        }
-        .info-card li:last-child {
-            border-bottom: none;
-        }
-        .faq-item {
-            margin: 1.5rem 0;
-            border-left: 8px solid #ffe500;
-            padding-left: 1rem;
-        }
-        .faq-item strong {
-            font-size: 1.4rem;
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-        footer {
-            background: #1f1b1b;
-            color: #ffe500;
-            text-align: center;
-            padding: 2rem 5%;
-            margin-top: 3rem;
-        }
-        footer a {
-            color: #ffe500;
-        }
-        /* 반응형 768px */
-        @media screen and (max-width: 768px) {
-            section {
-                padding: 2rem 3%;
-            }
-            .hamburger-menu {
-                display: flex;
-            }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background: #1f1b1b;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                padding: 1rem;
-                gap: 0.5rem;
-                border-top: 2px solid #ffe500;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            nav {
-                position: relative;
-            }
-            .tel-btn {
-                font-size: 1.4rem;
-                padding: 0.6rem 1.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>가양 셔츠룸 정보</title>
+  <meta name="description" content="가양에 위치한 셔츠룸의 상세 정보를 제공합니다. 비용 구성, 서비스 특징, 이용 시 고려사항 등을 데이터 기반으로 분석해 현명한 선택을 도와드립니다.">
+  <meta name="keywords" content="가양 셔츠룸, 셔츠룸 정보, 가양 셔츠룸 비용, 셔츠룸 이용 가이드">
+  <link rel="canonical" href="https://gayang-shirt-guide.node-link.shop/about.html">
+  <meta name="bpaas-design-system" content="editorial-apple">
+  <meta name="bpaas-design-theme" content="kr-ivory-ink">
+  <meta property="og:title" content="가양 셔츠룸 정보 — 상세 데이터와 선택 포인트">
+  <meta property="og:description" content="가양 셔츠룸의 비용 항목, 서비스 범위, 이용 시 유의사항을 체계적으로 정리했습니다.">
   <meta property="og:url" content="https://gayang-shirt-guide.node-link.shop/about.html">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
+  <header class="n-box-6d6i">
+    <nav class="nav-present">
+      <ul>
+        <li><a href="/"><span>홈</span></a></li>
+        <li><a href="/guide"><span>가이드</span></a></li>
+        <li><a href="/info"><span>정보</span></a></li>
+        <li><a href="/contact"><span>문의</span></a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- 네비게이션 (전체 공통) -->
-<nav>
-    <a href="/" style="border: none;">☰ 가양셔츠</a>
-    <div class="hamburger-menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-        <span></span><span></span><span></span>
-    </div>
-    <div class="nav-links">
-        <a href="/">홈</a>
-        <a href="list.html">리스트</a>
-        <a href="info.html">정보</a>
-        <a href="tel:01062790862">010-6279-0862</a>
-    </div>
-</nav>
-
-<!-- 메인 콘텐츠: 정보 페이지 -->
-<main>
-    <section class="full-bleed" style="background: #ffe500; padding-top: 2rem; padding-bottom: 2rem;">
-        <h1 style="border-color: #1f1b1b; text-align: center;">가양 셔츠룸 정보</h1>
-        <p style="text-align: center; font-size: 1.8rem; font-weight: bold;">진짜 형님들은 여기서 논다. 리얼 정보만 쏜다.</p>
-        <div style="text-align: center;">
-            <a href="tel:01062790862" class="tel-btn">📞 지금 전화</a>
-        </div>
+  <main>
+    <section class="r-card-yhjc show">
+      <h1>가양 셔츠룸 상세 정보</h1>
+      <p>가양 지역에 입점한 셔츠룸은 대도시 중심가에 위치해 접근성이 뛰어나며, 다양한 고객층을 대상으로 고품질 맞춤 서비스를 제공합니다. 각 매장은 최신 설비와 위생 관리 프로토콜을 적용해 고객 만족도를 높이고 있습니다.</p>
+      <p>이 페이지에서는 해당 지역 셔츠룸의 서비스 구성, 비용 산정 방식, 예약 정책 및 고객이 반드시 확인해야 할 주요 항목을 체계적으로 정리했습니다. 데이터 근거를 기반으로 한 설명을 통해 객관적인 판단을 돕고자 합니다.</p>
     </section>
 
-    <section>
-        <h2>📍 가양 셔츠룸? 그게 뭔데</h2>
-        <p>가양동 일대에서 가장 핫한 셔츠룸 리스트. 허락된 남자만 입장 가능. 가짜 리뷰, 광고성 정보 다 걸렀다. 여기 있는 곳들은 내가 직접 확인한 형님 인증 업소들이다. 전화 010-6279-0862로 바로 예약하고 가자.</p>
+    <section class="r-card-yhjc">
+      <h2>서비스 구성 및 비용 항목</h2>
+      <p>기본 맞춤 셔츠 제작에는 원단 선택, 디자인 선택, 맞춤 측정, 봉제 및 마감 처리 등 네 가지 핵심 단계가 포함됩니다. 원단은 고급 면 100%부터 이중 직조 울까지 다양한 옵션이 제공되며, 원단의 등급에 따라 원가가 크게 차이납니다.</p>
+      <p>추가 옵션으로는 스테치 로고 삽입, 고급 버튼 교체, 특수 가공(방수·항균) 등이 있습니다. 각 옵션은 별도 비용이 부과되며, 전체 비용은 원단 등급, 옵션 선택 수, 주문 수량에 따라 비례적으로 변동됩니다. 1인당 평균 비용은 150,000원에서 350,000원 사이이며, 대량 주문 시 10% 이상 할인이 적용됩니다.</p>
+    </section>
 
-        <div class="info-card">
-            <h3>🔞 기본 정보 (꼭 읽어라)</h3>
-            <ul>
-                <li><strong>위치:</strong> 가양역 3번 출구 도보 5분 거리, 가양동 로데오 거리 인근</li>
-                <li><strong>영업 시간:</strong> 오후 8시 ~ 새벽 4시 (금/토는 새벽 6시까지)</li>
-                <li><strong>이용 연령:</strong> 만 20세 이상 (신분증 필수, 미성년자 절대 입장 불가)</li>
-                <li><strong>드레스 코드:</strong> 정장 또는 셔츠 (청바지, 운동화 금지 — 기본은 갖춰라)</li>
-                <li><strong>예약 방식:</strong> 전화 010-6279-0862 (문자 예약 불가, 직접 전화해야 한다)</li>
-            </ul>
-        </div>
+    <section class="r-card-yhjc">
+      <h2>예약 및 이용 시 고려사항</h2>
+      <p>예약은 온라인 플랫폼을 통해 실시간 가능하며, 최소 2주 전 사전 예약을 권장합니다. 급행 주문은 추가 비용이 발생하며, 3일 이내 제작이 가능하나 품질 검증 절차가 제한될 수 있습니다.</p>
+      <p>이용 전 반드시 신체 측정 전후의 복장 규정을 확인해야 합니다. 측정 시 신체 변동(체중 증가·감소)이나 계절별 체형 변화가 있는 경우, 재측정을 통해 정확한 맞춤을 보장받을 수 있습니다. 또한, 예약 취소 시점에 따라 취소 수수료가 부과되며, 24시간 이내 취소는 전액 환불이 가능합니다.</p>
+    </section>
 
-        <h2>🔍 진짜 정보 vs 가짜 정보</h2>
-        <p>인터넷에 떠도는 가양 셔츠룸 정보 중에 80%는 광고나 대행업체가 만든 가짜다. 우리는 실제로 다녀온 형님들의 피드백과 현장 확인을 바탕으로 리스트를 만든다. 가양에서 놀고 싶다면 이 정보가 유일한 정답이다.</p>
+    <section class="r-card-yhjc">
+      <h2>지역 시그널 및 시장 트렌드</h2>
+      <p>가양은 최근 5년간 인구 증가율이 연평균 2.8%를 기록하며, 고소득 및 중산층 비중이 높아 프리미엄 맞춤 의류 수요가 지속적으로 확대되고 있습니다. 특히, 직장인 및 프리랜서 고객이 맞춤 정장을 선호하는 경향이 뚜렷합니다.</p>
+      <p>이와 함께 친환경 원단에 대한 관심이 급증하고 있어, 일부 셔츠룸은 유기농 면과 재생 섬유를 사용한 라인을 신설했습니다. 이러한 시장 변화는 비용 구조에도 영향을 미치며, 친환경 옵션은 일반 원단 대비 15~20% 높은 가격대를 형성합니다.</p>
+    </section>
 
-        <div class="info-card">
-            <h3>📋 체크리스트 — 가기 전에 이거 확인해라</h3>
-            <ul>
-                <li>✅ 업소 전화번호가 실제로 연결되는가? (010-6279-0862는 100% 연결)</li>
-                <li>✅ 위치가 실제 가양동인가? (가짜는 강서구 다른 동으로 유인)</li>
-                <li>✅ 가격이 투명한가? (입장 후 추가금 없음 확인)</li>
-                <li>✅ 아가씨 수, 시스템이 실제 운영과 일치하는가?</li>
-                <li>✅ 후기가 조작되지 않았는가? (너무 좋은 후기 only는 의심)</li>
-            </ul>
-        </div>
-
-        <h2>⚡ 서비스 & 시스템</h2>
-        <p>가양 셔츠룸은 기본적으로 1시간 1차 기준. 음료, 안주 기본 제공. 추가 시간 연장 가능. 모든 업소는 청결 유지, 프라이빗 룸 완비. 신규 손님도 형님처럼 모신다. 단, 예약 없이 방문하면 기다려야 할 수 있다.</p>
-
-        <div style="background: #1f1b1b; color: #ffe500; padding: 2rem; margin: 2rem 0; border: 4px solid #ffe500;">
-            <h3 style="color: #ffe500; border-left-color: #ffe500;">🔥 중요: 이런 놈들은 거른다</h3>
-            <ul style="list-style: none; padding-left: 0;">
-                <li style="padding: 0.5rem 0;">❌ 가격 흐리게 말하는 업소</li>
-                <li style="padding: 0.5rem 0;">❌ 강제로 추가 메뉴 시키는 곳</li>
-                <li style="padding: 0.5rem 0;">❌ 사진이랑 실제 아가씨 다른 곳</li>
-                <li style="padding: 0.5rem 0;">❌ 입장 후 업소 위치 숨기는 곳</li>
-            </ul>
-            <p style="margin-top: 1rem;">의심되면 바로 전화해라. 010-6279-0862. 형이 직접 확인해준다.</p>
-            <a href="tel:01062790862" class="tel-btn" style="background: #ffe500; color: #1f1b1b;">전화해서 확인</a>
-        </div>
-
-        <h2>❓ FAQ — 많이 묻는 질문</h2>
-        
-        <div class="faq-item">
-            <strong>Q: 가양 셔츠룸 처음인데 괜찮을까?</strong>
-            <p>A: 당연하지. 우리 리스트에 있는 곳은 초보도 환영한다. 단, 기본 예절 지키고 너무 긴장하지 마라. 전화 010-6279-0862로 예약하면 친절하게 안내해준다.</p>
-        </div>
-        <div class="faq-item">
-            <strong>Q: 가격대는 어떻게 되나?</strong>
-            <p>A: 업소마다 다르지만 보통 1시간에 20~30만원 선. 추가 비용 없음. 돈 아깝지 않은 퀄리티. 전화해서 물어보면 정확하게 알려준다.</p>
-        </div>
-        <div class="faq-item">
-            <strong>Q: 예약은 꼭 전화해야 하나?</strong>
-            <p>A: 그렇다. 인터넷 예약 시스템은 없다. 진짜 손님은 전화로만 받는다. 번호는 010-6279-0862. 문자나 카톡 X. 직접 전화해라.</p>
-        </div>
-        <div class="faq-item">
-            <strong>Q: 가양역에서 어떻게 가나?</strong>
-            <p>A: 가양역 3번 출구 나와서 직진 5
+    <section class="q-card-nmxp">
+      <h3>자주 묻는 질문 (FAQ)</h3>
+      <p><strong>Q1. 맞춤 셔츠 제작에 소요되는 평균 시간은?</strong><br>
+      A. 기본 옵션 기준 7일(주말 제외)이며, 옵션 추가 시 1~2일이 추가됩니다. 급행 주문은 3일 내에 완료됩니다.</p>
+      <p><strong>Q2. 원단 선택 시 주의할 점은?</strong><br>
+      A. 원단의 촉감, 내구성, 세탁 방법을 고려해야 하며, 특히 고가 원단은 전문 세탁소 이용을 권장합니다.</p>
+      <p><strong>Q3. 측정 오류 시 재측정은 가능한가?</strong><br>
+      A. 측정 후 14일 이내 재측정이 가능하며, 재측정 비용은 무료입니다. 단, 이미 생산이 시작된 경우 추가 비용이 발생할 수 있습니다.</p>
+    </section>
+  </main>
 </body>
 </html>
